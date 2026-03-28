@@ -9,10 +9,10 @@
     ]
   },
   "kpis": [
-    { "value": 47, "suffix": "+", "label": "Reseñas Google", "prefix": "" },
+    { "value": , "suffix": "+", "label": "Reseñas Google", "prefix": "" },
     { "value": 5.0, "suffix": "★", "label": "Calificación promedio", "prefix": "", "decimals": 1 },
-    { "value": 100, "suffix": "%", "label": "Clientes satisfechos", "prefix": "" },
-    { "value": 8, "suffix": "+", "label": "Años de experiencia", "prefix": "" }
+
+  
   ],
   "science_stats": [
     { "value": 28, "suffix": "%", "label": "↑ Serotonina", "desc": "Hormona clave de bienestar y motivación" },
