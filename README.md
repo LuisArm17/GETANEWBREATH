@@ -61,7 +61,7 @@ Luego actualiza el HTML del hero y los mockups para referenciar estas rutas:
 ```css
 :root {
   --c-accent: #c8a96e;    /* Color dorado principal */
-  --c-bg:     #070707;    /* Fondo oscuro */
+  --c-bg:     #070707;    /* Fondo premium gold */
 }
 ```
 
