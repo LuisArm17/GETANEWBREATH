@@ -16,7 +16,8 @@ Sitio estático multi-presentación con scroll animado, listo para Vercel.
 │       ├── index.html            → Presentación completa
 │       ├── css/theme.css         → Identidad visual de la marca
 │       ├── js/main.js            → Lógica específica + animaciones GSAP
-│       └── assets/               → (Añadir imágenes y videos aquí)
+│       └── assets/               →![Uploading DSC03958.jpg…]()
+
 └── data/
     └── hernan.json               → Datos dinámicos (KPIs, reseñas, servicios)
 ```
