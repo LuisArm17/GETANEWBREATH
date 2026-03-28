@@ -68,12 +68,6 @@ Luego actualiza el HTML del hero y los mockups para referenciar estas rutas:
 ### Actualizar datos (hernan.json)
 Edita `/data/hernan.json` para cambiar KPIs, reseñas, servicios, datos del gráfico.
 
-### Añadir nueva presentación
-1. Copiar `/brands/hernan/` → `/brands/nueva-marca/`
-2. Editar `theme.css` con nueva identidad visual
-3. Crear `/data/nueva-marca.json` con datos
-4. Añadir card en `/index.html`
-5. Añadir rewrite en `vercel.json`
 
 ## 📦 Stack
 
