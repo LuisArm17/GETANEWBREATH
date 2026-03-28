@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hernán — Masajista Funcional | Bienestar de Élite</title>
+  <meta name="description" content="Masajista funcional de élite en Santiago. Masaje deportivo, relajante y funcional con resultados comprobados. 5★ en Google.">
+  <meta property="og:title" content="Hernán — Masajista Funcional">
+  <meta property="og:description" content="Recupera tu cuerpo. Recupera tu vida.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- CDN Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/shared/css/base.css">
+  <link rel="stylesheet" href="/brands/hernan/css/theme.css">
+
+  <style>
+    /* Inline critical styles */
+    body { background: #070707; }
+    .hero__bg-img { background: linear-gradient(135deg, #1a1408 0%, #0a0a0a 100%); }
+  </style>
+</head>
+<body>
+
+<!-- Grain texture overlay -->
+<div class="grain" aria-hidden="true"></div>
+
+<!-- Progress Bar -->
+<div id="progress-bar" role="progressbar" aria-label="Progreso de lectura"></div>
+
+<!-- ─── Navigation ──────────────────────────────── -->
+<nav class="nav" role="navigation">
+  <div class="nav__logo">HM<span style="color:rgba(244,240,232,0.3)">.</span>funcional</div>
+  <ul class="nav__links">
+    <li><a href="#sobre-mi">Sobre mí</a></li>
+    <li><a href="#ciencia">Ciencia</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#videos">Contenido</a></li>
+    <li><a href="#reseñas">Reseñas</a></li>
+    <li><a href="https://www.instagram.com/hernan.masajistafuncional/" target="_blank" rel="noopener" class="btn btn--primary" style="padding:0.5rem 1.2rem">Instagram</a></li>
+  </ul>
+</nav>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- 1. HERO                                     -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="hero" id="inicio" data-nav="inicio">
+  <div class="hero__bg">
+    <!-- Atmospheric background — SVG gradient + decorative lines -->
+    <svg class="hero__bg-img" viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%">
+      <defs>
+        <radialGradient id="heroGrad1" cx="70%" cy="40%" r="60%">
+          <stop offset="0%" stop-color="#2a1f0d" stop-opacity="0.8"/>
+          <stop offset="100%" stop-color="#070707" stop-opacity="1"/>
+        </radialGradient>
+        <radialGradient id="heroGrad2" cx="20%" cy="80%" r="40%">
+          <stop offset="0%" stop-color="#0d1a0f" stop-opacity="0.5"/>
+          <stop offset="100%" stop-color="#070707" stop-opacity="0"/>
+        </radialGradient>
+        <filter id="heroBlur">
+          <feGaussianBlur stdDeviation="1"/>
+        </filter>
+      </defs>
+      <rect width="1440" height="900" fill="#070707"/>
+      <rect width="1440" height="900" fill="url(#heroGrad1)"/>
+      <rect width="1440" height="900" fill="url(#heroGrad2)"/>
+      <!-- Decorative grid lines -->
+      <g stroke="rgba(200,169,110,0.04)" stroke-width="1" filter="url(#heroBlur)">
+        <line x1="0" y1="200" x2="1440" y2="200"/>
+        <line x1="0" y1="400" x2="1440" y2="400"/>
+        <line x1="0" y1="600" x2="1440" y2="600"/>
+        <line x1="300" y1="0" x2="300" y2="900"/>
+        <line x1="700" y1="0" x2="700" y2="900"/>
+        <line x1="1100" y1="0" x2="1100" y2="900"/>
+      </g>
+      <!-- Decorative circle -->
+      <circle cx="1050" cy="400" r="280" stroke="rgba(200,169,110,0.05)" stroke-width="1" fill="none"/>
+      <circle cx="1050" cy="400" r="200" stroke="rgba(200,169,110,0.04)" stroke-width="1" fill="none"/>
+      <circle cx="1050" cy="400" r="120" stroke="rgba(200,169,110,0.06)" stroke-width="1" fill="none"/>
+      <!-- Anatomical line art (stylized body meridian lines) -->
+      <g stroke="rgba(200,169,110,0.08)" stroke-width="0.8" fill="none">
+        <path d="M980,50 C980,50 970,200 980,350 C990,500 975,600 980,750"/>
+        <path d="M1020,50 C1020,50 1030,200 1020,350 C1010,500 1025,600 1020,750"/>
+        <path d="M880,150 C880,150 950,300 900,450 C850,600 900,700 880,800"/>
+        <path d="M1120,150 C1120,150 1050,300 1100,450 C1150,600 1100,700 1120,800"/>
+      </g>
+    </svg>
+    <div class="hero__overlay"></div>
+  </div>
+
+  <div class="hero__content">
+    <div class="hero__eyebrow">
+      <div class="hero__eyebrow-line"></div>
+      <span class="label">Santiago, Chile · Masajista Funcional</span>
+    </div>
+
+    <h1 class="hero__title">
+      Recupera tu<br>
+      <em>cuerpo.</em>
+      Recupera tu<br>vida.
+    </h1>
+
+    <p class="hero__subtitle">
+      Más de 8 años transformando cómo se sienten las personas. Técnica, conocimiento y resultados reales — avalados por 47 reseñas perfectas en Google.
+    </p>
+
+    <div class="hero__cta">
+      <a href="https://www.instagram.com/hernan.masajistafuncional/" target="_blank" rel="noopener" class="btn btn--primary">
+        <span>▶</span> Ver en Instagram
+      </a>
+      <a href="#reseñas" class="btn">
+        <span>★</span> 5.0 Google
+      </a>
+    </div>
+  </div>
+
+  <div class="hero__scroll-hint" aria-hidden="true">Scroll</div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- 2. SOBRE MÍ                                 -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="section about-section" id="sobre-mi" data-nav="sobre-mi">
+  <div class="section__inner">
+    <div class="about-grid">
+      <div class="about-text gsap-fade-up">
+        <div class="section-number">01 — Quién soy</div>
+        <h2>
+          Masajista funcional.<br>
+          <em>No simplemente masajista.</em>
+        </h2>
+        <p>
+          Hernán combina técnicas manuales avanzadas con un profundo entendimiento del cuerpo humano. No es solo aliviar tensión — es entender la causa raíz, tratar con precisión y lograr resultados que duran.
+        </p>
+        <blockquote class="about-quote">
+          "El descanso no siempre viene de desconectarse, sino de recuperar el cuerpo."
+        </blockquote>
+        <p>
+          La masoterapia funcional ofrece una experiencia real de bienestar. No solo te relajas en el momento — mejoras cómo te sientes después. Es una inversión en energía, claridad y calidad de vida.
+        </p>
+
+        <div style="display:flex;gap:2rem;margin-top:2.5rem;flex-wrap:wrap;">
+          <div>
+            <span style="font-family:var(--font-display);font-size:3rem;font-weight:900;color:var(--c-accent);line-height:1">8+</span>
+            <span style="display:block;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--c-text-muted);margin-top:0.3rem">Años de experiencia</span>
+          </div>
+          <div>
+            <span style="font-family:var(--font-display);font-size:3rem;font-weight:900;color:var(--c-accent);line-height:1">47</span>
+            <span style="display:block;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--c-text-muted);margin-top:0.3rem">Reseñas 5★ Google</span>
+          </div>
+          <div>
+            <span style="font-family:var(--font-display);font-size:3rem;font-weight:900;color:var(--c-accent);line-height:1">4</span>
+            <span style="display:block;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--c-text-muted);margin-top:0.3rem">Especialidades</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-visual">
+        <div class="about-phone-wrap">
+          <!-- Phone mockup with Instagram visual -->
+          <div class="phone">
+            <div class="phone__notch"></div>
+            <div class="phone__screen">
+              <!-- Instagram-style feed visual -->
+              <svg viewBox="0 0 260 530" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;background:#0a0a0a">
+                <!-- Instagram UI mockup -->
+                <rect width="260" height="530" fill="#0a0a0a"/>
+                <!-- Header -->
+                <rect width="260" height="44" y="30" fill="#0a0a0a"/>
+                <text x="130" y="58" text-anchor="middle" fill="#c8a96e" font-size="13" font-family="Georgia" font-weight="bold">hernan.masajistafuncional</text>
+                <!-- Profile area -->
+                <circle cx="60" cy="110" r="36" fill="none" stroke="#c8a96e" stroke-width="2"/>
+                <circle cx="60" cy="110" r="32" fill="#1a1a1a"/>
+                <text x="60" y="117" text-anchor="middle" fill="#c8a96e" font-size="20">H</text>
+                <!-- Stats -->
+                <text x="140" y="100" text-anchor="middle" fill="#f4f0e8" font-size="16" font-weight="bold" font-family="Georgia">200+</text>
+                <text x="140" y="115" text-anchor="middle" fill="rgba(244,240,232,0.5)" font-size="9" font-family="sans-serif">publicaciones</text>
+                <text x="200" y="100" text-anchor="middle" fill="#f4f0e8" font-size="16" font-weight="bold" font-family="Georgia">2.1K</text>
+                <text x="200" y="115" text-anchor="middle" fill="rgba(244,240,232,0.5)" font-size="9" font-family="sans-serif">seguidores</text>
+                <!-- Bio -->
+                <text x="20" y="162" fill="#f4f0e8" font-size="10" font-family="sans-serif" font-weight="bold">Hernán · Masajista Funcional 💆</text>
+                <text x="20" y="176" fill="rgba(244,240,232,0.6)" font-size="9" font-family="sans-serif">Masaje deportivo · relajante · funcional</text>
+                <text x="20" y="190" fill="rgba(244,240,232,0.6)" font-size="9" font-family="sans-serif">📍 Santiago, Chile · ★ 5.0 Google</text>
+                <!-- Follow button -->
+                <rect x="20" y="202" width="220" height="28" rx="6" fill="#c8a96e"/>
+                <text x="130" y="221" text-anchor="middle" fill="#070707" font-size="11" font-weight="bold" font-family="sans-serif">Seguir</text>
+                <!-- Grid photos -->
+                <rect x="1" y="245" width="84" height="84" fill="#1a1508"/>
+                <text x="43" y="293" text-anchor="middle" fill="rgba(200,169,110,0.4)" font-size="28">💆</text>
+                <rect x="88" y="245" width="84" height="84" fill="#0d1a10"/>
+                <text x="130" y="293" text-anchor="middle" fill="rgba(138,171,150,0.4)" font-size="28">💪</text>
+                <rect x="175" y="245" width="84" height="84" fill="#1a1508"/>
+                <text x="217" y="293" text-anchor="middle" fill="rgba(200,169,110,0.4)" font-size="28">🏃</text>
+                <rect x="1" y="332" width="84" height="84" fill="#0d1a10"/>
+                <text x="43" y="380" text-anchor="middle" fill="rgba(138,171,150,0.4)" font-size="28">🧠</text>
+                <rect x="88" y="332" width="84" height="84" fill="#1a1508"/>
+                <text x="130" y="380" text-anchor="middle" fill="rgba(200,169,110,0.4)" font-size="28">⚡</text>
+                <rect x="175" y="332" width="84" height="84" fill="#0d1a10"/>
+                <text x="217" y="380" text-anchor="middle" fill="rgba(138,171,150,0.4)" font-size="28">🌿</text>
+                <!-- Bottom nav -->
+                <rect y="440" width="260" height="60" fill="#0a0a0a"/>
+                <rect y="440" width="260" height="1" fill="rgba(255,255,255,0.08)"/>
+                <text x="35" y="476" text-anchor="middle" fill="#f4f0e8" font-size="20">🏠</text>
+                <text x="88" y="476" text-anchor="middle" fill="rgba(244,240,232,0.4)" font-size="20">🔍</text>
+                <text x="130" y="476" text-anchor="middle" fill="rgba(244,240,232,0.4)" font-size="20">➕</text>
+                <text x="172" y="476" text-anchor="middle" fill="rgba(244,240,232,0.4)" font-size="20">❤️</text>
+                <circle cx="225" cy="466" r="14" fill="rgba(200,169,110,0.3)" stroke="#c8a96e" stroke-width="1.5"/>
+                <text x="225" y="472" text-anchor="middle" fill="#c8a96e" font-size="12">H</text>
+              </svg>
+            </div>
+          </div>
+
+          <div class="about-phone-badge">
+            <strong>5.0</strong>
+            <span>★ Google</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- 3. CIENCIA DEL MASAJE                       -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="section science-section" id="ciencia" data-nav="ciencia">
+  <div class="section__inner">
+    <div class="science-header gsap-fade-up">
+      <div class="section-number">02 — La ciencia detrás</div>
+      <h2>
+        El masaje no es lujo.<br>
+        Es <em style="font-style:italic;color:var(--c-accent)">medicina</em>.
+      </h2>
+      <p class="body-text">
+        La masoterapia tiene respaldo científico sólido. Cada sesión produce cambios medibles y verificables en tu biología — no son sensaciones subjetivas, son datos.
+      </p>
+    </div>
+
+    <!-- Stat numbers -->
+    <div class="science-stats-grid">
+      <div class="science-stat gsap-scale-in">
+        <span class="science-stat__number" data-count="28" data-suffix="%" style="font-size:clamp(2.5rem,4vw,4.5rem)">0%</span>
+        <span class="science-stat__label">↑ Serotonina</span>
+        <p class="science-stat__desc">Hormona clave de bienestar y motivación</p>
+      </div>
+      <div class="science-stat gsap-scale-in">
+        <span class="science-stat__number" data-count="31" data-suffix="%" style="font-size:clamp(2.5rem,4vw,4.5rem)">0%</span>
+        <span class="science-stat__label">↑ Dopamina</span>
+        <p class="science-stat__desc">Mejora rendimiento mental y foco</p>
+      </div>
+      <div class="science-stat gsap-scale-in">
+        <span class="science-stat__number" data-count="35" data-suffix="%" style="font-size:clamp(2.5rem,4vw,4.5rem)">0%</span>
+        <span class="science-stat__label">↓ Cortisol</span>
+        <p class="science-stat__desc">Reducción del biomarcador de estrés</p>
+      </div>
+      <div class="science-stat gsap-scale-in">
+        <span class="science-stat__number" data-count="90" data-suffix="%" style="font-size:clamp(2.5rem,4vw,4.5rem)">0%</span>
+        <span class="science-stat__label">Mejora del sueño</span>
+        <p class="science-stat__desc">Clientes reportan descanso superior</p>
+      </div>
+    </div>
+
+    <!-- Body effects + quote -->
+    <div class="science-body-effects">
+      <div>
+        <p class="label" style="margin-bottom:2rem">Efectos fisiológicos inmediatos</p>
+        <ul class="science-effects-list">
+          <li>
+            <span class="effect-icon">❤️</span>
+            <div class="effect-text">
+              <strong>↓ Presión arterial</strong>
+              <span>Reducción significativa post-sesión, comprobada en estudios clínicos</span>
+            </div>
+          </li>
+          <li>
+            <span class="effect-icon">💓</span>
+            <div class="effect-text">
+              <strong>↓ Frecuencia cardíaca</strong>
+              <span>El cuerpo entra en modo recuperación activa</span>
+            </div>
+          </li>
+          <li>
+            <span class="effect-icon">💪</span>
+            <div class="effect-text">
+              <strong>↓ Tensión muscular</strong>
+              <span>Liberación de contracturas crónicas y puntos gatillo</span>
+            </div>
+          </li>
+          <li>
+            <span class="effect-icon">🧘</span>
+            <div class="effect-text">
+              <strong>↑ Sistema nervioso parasimpático</strong>
+              <span>Activación del modo "calma y recuperación"</span>
+            </div>
+          </li>
+          <li>
+            <span class="effect-icon">🧠</span>
+            <div class="effect-text">
+              <strong>↑ Claridad mental y rendimiento</strong>
+              <span>Mejoras en ansiedad, estado de ánimo y percepción de bienestar</span>
+            </div>
+          </li>
+          <li>
+            <span class="effect-icon">😴</span>
+            <div class="effect-text">
+              <strong>↑ Calidad del sueño</strong>
+              <span>El sistema nervioso regula ciclos de descanso naturales</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="science-quote-box gsap-fade-in">
+        <blockquote>
+          "La masoterapia genera reducciones significativas en biomarcadores de estrés como cortisol y presión arterial, con mejoras sostenidas en ansiedad, estado de ánimo y percepción de relajación."
+        </blockquote>
+        <cite>— Field T., Touch Research Institute, University of Miami</cite>
+
+        <div style="margin-top:2rem;padding-top:2rem;border-top:1px solid var(--c-border)">
+          <p style="font-size:0.88rem;color:var(--c-text-muted);line-height:1.8">
+            La masoterapia ofrece una experiencia real de bienestar donde no solo te relajas en el momento, sino que mejoras cómo te sientes después. Es una inversión en <strong style="color:var(--c-text)">energía, claridad y calidad de vida</strong>.
+          </p>
+        </div>
+
+        <!-- Mini KPIs inline -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem">
+          <div style="text-align:center;padding:1rem;background:var(--c-bg);border:1px solid var(--c-border);border-radius:2px">
+            <span style="font-family:var(--font-display);font-size:2rem;font-weight:900;color:var(--c-accent)" data-count="28" data-suffix="%">0%</span>
+            <span style="display:block;font-size:0.7rem;color:var(--c-text-muted);text-transform:uppercase;letter-spacing:0.1em;margin-top:0.2rem">↑ Serotonina</span>
+          </div>
+          <div style="text-align:center;padding:1rem;background:var(--c-bg);border:1px solid var(--c-border);border-radius:2px">
+            <span style="font-family:var(--font-display);font-size:2rem;font-weight:900;color:var(--c-accent)" data-count="31" data-suffix="%">0%</span>
+            <span style="display:block;font-size:0.7rem;color:var(--c-text-muted);text-transform:uppercase;letter-spacing:0.1em;margin-top:0.2rem">↑ Dopamina</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- 4. BENEFICIOS                               -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="section" id="beneficios" data-nav="beneficios" style="background:var(--c-surface)">
+  <div class="section__inner">
+    <div class="gsap-fade-up">
+      <div class="section-number">03 — Por qué importa</div>
+      <h2 class="headline" style="margin-bottom:0.5rem">Lo que una sesión<br>hace por ti</h2>
+      <p class="subheadline">Beneficios reales, medibles, duraderos</p>
+    </div>
+
+    <div class="benefits-grid">
+      <div class="benefit-item">
+        <span class="benefit-icon">🧠</span>
+        <div class="benefit-title">Claridad mental</div>
+        <div class="benefit-desc">↑ Rendimiento cognitivo y concentración sostenida. Más foco, menos niebla mental.</div>
+      </div>
+      <div class="benefit-item">
+        <span class="benefit-icon">❤️</span>
+        <div class="benefit-title">Salud cardiovascular</div>
+        <div class="benefit-desc">↓ Presión arterial y frecuencia cardíaca. Tu corazón trabaja con menos esfuerzo.</div>
+      </div>
+      <div class="benefit-item">
+        <span class="benefit-icon">😴</span>
+        <div class="benefit-title">Calidad del sueño</div>
+        <div class="benefit-desc">↑ Activación del sistema nervioso parasimpático. Sueño más profundo y reparador.</div>
+      </div>
+      <div class="benefit-item">
+        <span class="benefit-icon">💪</span>
+        <div class="benefit-title">Rendimiento físico</div>
+        <div class="benefit-desc">↓ Tensión muscular y tiempo de recuperación. Ideal para deportistas y activos.</div>
+      </div>
+      <div class="benefit-item">
+        <span class="benefit-icon">😌</span>
+        <div class="benefit-title">Bienestar emocional</div>
+        <div class="benefit-desc">↑ Estado de ánimo y percepción de relajación. Menos ansiedad, más equilibrio.</div>
+      </div>
+      <div class="benefit-item">
+        <span class="benefit-icon">⚡</span>
+        <div class="benefit-title">Energía vital</div>
+        <div class="benefit-desc">↑ Vitalidad sostenida post-sesión. La energía que necesitas para tu día a día.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- 5. SERVICIOS                                -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="section" id="servicios" data-nav="servicios">
+  <div class="section__inner">
+    <div class="gsap-fade-up">
+      <div class="section-number">04 — Servicios</div>
+      <h2 class="headline">Técnicas para cada<br><em style="font-style:italic;color:var(--c-accent)">necesidad</em></h2>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🏃</div>
+        <div>
+          <div class="service-name">Masaje Deportivo</div>
+          <div class="service-desc">Técnicas especializadas para deportistas. Recuperación muscular, prevención de lesiones y mejora del rendimiento físico.</div>
+          <div class="service-duration">⏱ 60 min</div>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🌿</div>
+        <div>
+          <div class="service-name">Masaje Relajante</div>
+          <div class="service-desc">Libera tensión acumulada y activa el sistema nervioso parasimpático. Ideal para quienes viven bajo estrés crónico.</div>
+          <div class="service-duration">⏱ 60–90 min</div>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">⚡</div>
+        <div>
+          <div class="service-name">Masaje Funcional</div>
+          <div class="service-desc">Abordaje integral que combina técnicas miofasciales, neuromusculares y de tejido profundo para tratar el origen del dolor.</div>
+          <div class="service-duration">⏱ 75 min</div>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">💪</div>
+        <div>
+          <div class="service-name">Masaje Descontracturante</div>
+          <div class="service-desc">Foco en nudos musculares y contracturas crónicas. Alta presión con control total del dolor para una liberación profunda.</div>
+          <div class="service-duration">⏱ 60 min</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA after services -->
+    <div style="margin-top:3rem;text-align:center">
+      <a href="https://www.instagram.com/hernan.masajistafuncional/" target="_blank" rel="noopener" class="btn btn--primary" style="font-size:0.9rem;padding:1rem 2.5rem">
+        Agendar sesión en Instagram
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- 6. KPIs ANIMADOS                            -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="section kpi-section" id="numeros" data-nav="numeros" style="background:var(--c-surface)">
+  <div class="section__inner">
+    <div class="gsap-fade-up" style="margin-bottom:4rem">
+      <div class="section-number">05 — Los números</div>
+      <h2 class="headline">Resultados que<br>hablan solos</h2>
+    </div>
+
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <span class="kpi-number" data-count="47" data-suffix="+">0</span>
+        <span class="kpi-label">Reseñas Google</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-number" data-count="5.0" data-suffix="★" data-decimals="1">0</span>
+        <span class="kpi-label">Calificación promedio</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-number" data-count="100" data-suffix="%">0</span>
+        <span class="kpi-label">Clientes satisfechos</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-number" data-count="8" data-suffix="+">0</span>
+        <span class="kpi-label">Años de experiencia</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- 7. GRÁFICO DE CRECIMIENTO                   -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="section chart-section" id="crecimiento" data-nav="crecimiento">
+  <div class="section__inner">
+    <div class="gsap-fade-up">
+      <div class="section-number">06 — Crecimiento</div>
+      <h2 class="headline">Trayectoria de<br><em style="font-style:italic;color:var(--c-accent)">confianza</em></h2>
+      <p class="body-text" style="margin-top:1rem">
+        Desde 2020, Hernán ha construido una base sólida de clientes recurrentes. Los números reflejan años de trabajo consistente y resultados reales.
+      </p>
+    </div>
+
+    <div class="chart-wrap gsap-scale-in">
+      <canvas id="growthChart" style="height:380px;max-height:380px"></canvas>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- 8. VIDEOS / CONTENIDO                       -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="section videos-section" id="videos" data-nav="videos">
+  <div class="section__inner">
+    <div class="gsap-fade-up">
+      <div class="section-number">07 — Contenido destacado</div>
+      <h2 class="headline">Videos que<br><em style="font-style:italic;color:var(--c-accent)">conectan</em></h2>
+      <p class="body-text" style="margin-top:1rem">
+        Contenido educativo, técnico y real que muestra el trabajo de Hernán — directo desde su Instagram.
+      </p>
+    </div>
+
+    <div class="videos-grid">
+      <!-- Video 1 -->
+      <article class="video-card" data-ig-link>
+        <div class="video-card__thumb">
+          <div class="video-card__thumb-gradient" style="background:linear-gradient(135deg,#1a1005 0%,#0a1a0d 50%,#0a0a0a 100%)">
+            <svg viewBox="0 0 240 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;position:absolute;inset:0">
+              <defs>
+                <radialGradient id="vg1" cx="50%" cy="40%" r="60%">
+                  <stop offset="0%" stop-color="#2a1f0a"/>
+                  <stop offset="100%" stop-color="#070707"/>
+                </radialGradient>
+              </defs>
+              <rect width="240" height="420" fill="url(#vg1)"/>
+              <!-- Stylized hands / massage illustration -->
+              <g fill="none" stroke="rgba(200,169,110,0.3)" stroke-width="1.5">
+                <ellipse cx="120" cy="200" rx="60" ry="80"/>
+                <ellipse cx="120" cy="200" rx="45" ry="60"/>
+                <line x1="120" y1="140" x2="120" y2="260"/>
+                <line x1="80" y1="200" x2="160" y2="200"/>
+                <path d="M90,170 Q120,155 150,170"/>
+                <path d="M90,230 Q120,245 150,230"/>
+              </g>
+              <circle cx="120" cy="200" r="20" fill="rgba(200,169,110,0.1)" stroke="rgba(200,169,110,0.4)" stroke-width="1"/>
+              <text x="120" y="206" text-anchor="middle" fill="rgba(200,169,110,0.6)" font-size="16">💆</text>
+              <!-- Decorative lines at top and bottom -->
+              <rect x="0" y="0" width="240" height="60" fill="rgba(0,0,0,0.4)"/>
+              <rect x="0" y="360" width="240" height="60" fill="rgba(0,0,0,0.5)"/>
+            </svg>
+          </div>
+          <div class="video-card__ig-link">@hernan.masajistafuncional</div>
+          <div class="video-card__play">▶</div>
+          <div class="video-card__views">👁 12.4K</div>
+        </div>
+        <div class="video-card__body">
+          <div class="card__tag">Técnica · Tejido profundo</div>
+          <div class="video-card__title">Liberación de fascia y musculatura profunda</div>
+          <div class="video-card__desc">El video más compartido — técnica precisa para liberar contracturas crónicas de espalda.</div>
+        </div>
+      </article>
+
+      <!-- Video 2 -->
+      <article class="video-card" data-ig-link>
+        <div class="video-card__thumb">
+          <div class="video-card__thumb-gradient" style="background:linear-gradient(135deg,#0d1a10 0%,#1a0d05 50%,#0a0a0a 100%)">
+            <svg viewBox="0 0 240 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;position:absolute;inset:0">
+              <defs>
+                <radialGradient id="vg2" cx="50%" cy="40%" r="60%">
+                  <stop offset="0%" stop-color="#0d200f"/>
+                  <stop offset="100%" stop-color="#070707"/>
+                </radialGradient>
+              </defs>
+              <rect width="240" height="420" fill="url(#vg2)"/>
+              <g fill="none" stroke="rgba(138,171,150,0.3)" stroke-width="1.5">
+                <path d="M60,180 Q120,120 180,180 Q120,240 60,180Z"/>
+                <ellipse cx="120" cy="180" rx="50" ry="35"/>
+                <line x1="120" y1="100" x2="120" y2="260"/>
+                <line x1="60" y1="180" x2="180" y2="180"/>
+              </g>
+              <text x="120" y="196" text-anchor="middle" fill="rgba(138,171,150,0.7)" font-size="30">🏃</text>
+              <rect x="0" y="0" width="240" height="60" fill="rgba(0,0,0,0.4)"/>
+              <rect x="0" y="360" width="240" height="60" fill="rgba(0,0,0,0.5)"/>
+            </svg>
+          </div>
+          <div class="video-card__ig-link">@hernan.masajistafuncional</div>
+          <div class="video-card__play">▶</div>
+          <div class="video-card__views">👁 9.8K</div>
+        </div>
+        <div class="video-card__body">
+          <div class="card__tag">Deportivo · Recuperación</div>
+          <div class="video-card__title">Masaje deportivo en acción</div>
+          <div class="video-card__desc">Recuperación post-entrenamiento intensivo. Protocolo real para atletas de alto rendimiento.</div>
+        </div>
+      </article>
+
+      <!-- Video 3 (más visto) -->
+      <article class="video-card" data-ig-link style="border-color:rgba(200,169,110,0.3)">
+        <div class="video-card__thumb">
+          <div class="video-card__thumb-gradient" style="background:linear-gradient(135deg,#1f1a08 0%,#0a0d1a 50%,#0a0a0a 100%)">
+            <svg viewBox="0 0 240 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;position:absolute;inset:0">
+              <defs>
+                <radialGradient id="vg3" cx="50%" cy="40%" r="70%">
+                  <stop offset="0%" stop-color="#2a2208"/>
+                  <stop offset="100%" stop-color="#070707"/>
+                </radialGradient>
+              </defs>
+              <rect width="240" height="420" fill="url(#vg3)"/>
+              <!-- Star/burst pattern -->
+              <g stroke="rgba(200,169,110,0.2)" stroke-width="1" fill="none">
+                <circle cx="120" cy="190" r="80"/>
+                <circle cx="120" cy="190" r="55"/>
+                <circle cx="120" cy="190" r="30"/>
+              </g>
+              <g stroke="rgba(200,169,110,0.15)" stroke-width="0.8">
+                <line x1="120" y1="110" x2="120" y2="270"/>
+                <line x1="40" y1="190" x2="200" y2="190"/>
+                <line x1="63" y1="133" x2="177" y2="247"/>
+                <line x1="177" y1="133" x2="63" y2="247"/>
+              </g>
+              <text x="120" y="200" text-anchor="middle" fill="rgba(200,169,110,0.8)" font-size="36">⚡</text>
+              <!-- "Más visto" badge area -->
+              <rect x="0" y="0" width="240" height="60" fill="rgba(0,0,0,0.4)"/>
+              <rect x="0" y="360" width="240" height="60" fill="rgba(0,0,0,0.5)"/>
+            </svg>
+          </div>
+          <div class="video-card__ig-link">@hernan.masajistafuncional</div>
+          <!-- Trending badge -->
+          <div style="position:absolute;top:1rem;right:1rem;background:rgba(200,169,110,0.9);color:#070707;padding:0.25rem 0.6rem;border-radius:2px;font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;z-index:2">🔥 Más visto</div>
+          <div class="video-card__play" style="background:rgba(200,169,110,0.95)">▶</div>
+          <div class="video-card__views">👁 18.2K</div>
+        </div>
+        <div class="video-card__body">
+          <div class="card__tag">Bienestar · Funcional</div>
+          <div class="video-card__title">El poder del masaje funcional</div>
+          <div class="video-card__desc">El video más visto del perfil — bienestar integral explicado en detalle. Por qué el masaje es medicina.</div>
+        </div>
+      </article>
+    </div>
+
+    <div style="text-align:center;margin-top:3rem">
+      <a href="https://www.instagram.com/hernan.masajistafuncional/" target="_blank" rel="noopener" class="btn">
+        Ver todos los videos en Instagram →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- 9. RESEÑAS GOOGLE                           -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="section reviews-section" id="reseñas" data-nav="reseñas" style="background:var(--c-surface)">
+  <div class="section__inner">
+    <div class="gsap-fade-up">
+      <div class="section-number">08 — Reseñas verificadas</div>
+      <h2 class="headline">Lo que dicen<br><em style="font-style:italic;color:var(--c-accent)">sus clientes</em></h2>
+    </div>
+
+    <!-- Google badge -->
+    <div class="google-badge gsap-fade-in" style="margin-top:2rem">
+      <div class="google-badge__logo">
+        <svg width="28" height="28" viewBox="0 0 48 48">
+          <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+          <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+          <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+          <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+        </svg>
+      </div>
+      <div class="google-badge__text">
+        <strong>5.0 ★</strong>
+        <small>47 reseñas · Google Maps · Calificación perfecta</small>
+      </div>
+      <div style="display:flex;gap:3px;color:#c8a96e;font-size:1.4rem;align-self:center">
+        ★★★★★
+      </div>
+    </div>
+
+    <div class="reviews-grid">
+      <!-- Review 1 -->
+      <div class="review-item">
+        <div class="review-item__header">
+          <div class="review-item__avatar">V</div>
+          <div>
+            <div class="review-item__name">Valentina R.</div>
+          </div>
+        </div>
+        <div class="review-item__stars">★★★★★</div>
+        <div class="review-item__quote-mark">"</div>
+        <div class="review-item__text">La mejor decisión fue agendar con Hernán. Llegué con una contractura enorme en el cuello y en una sesión sentí el cambio. Muy profesional y atento.</div>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="review-item">
+        <div class="review-item__header">
+          <div class="review-item__avatar" style="background:linear-gradient(135deg,#7a9e8a,#5a7a6a)">R</div>
+          <div>
+            <div class="review-item__name">Rodrigo M.</div>
+          </div>
+        </div>
+        <div class="review-item__stars">★★★★★</div>
+        <div class="review-item__quote-mark">"</div>
+        <div class="review-item__text">Hernán tiene un conocimiento real del cuerpo humano. Noto la diferencia en mi rendimiento deportivo desde que voy regularmente.</div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="review-item">
+        <div class="review-item__header">
+          <div class="review-item__avatar" style="background:linear-gradient(135deg,#c8a96e,#a88050)">C</div>
+          <div>
+            <div class="review-item__name">Camila F.</div>
+          </div>
+        </div>
+        <div class="review-item__stars">★★★★★</div>
+        <div class="review-item__quote-mark">"</div>
+        <div class="review-item__text">Salí completamente renovada. No solo es masaje, es una experiencia de bienestar completa. Muy recomendado para quienes trabajamos bajo estrés.</div>
+      </div>
+
+      <!-- Review 4 -->
+      <div class="review-item">
+        <div class="review-item__header">
+          <div class="review-item__avatar" style="background:linear-gradient(135deg,#6e8ac8,#4a6aaa)">F</div>
+          <div>
+            <div class="review-item__name">Felipe A.</div>
+          </div>
+        </div>
+        <div class="review-item__stars">★★★★★</div>
+        <div class="review-item__quote-mark">"</div>
+        <div class="review-item__text">Profesional, puntual y con unas manos increíbles. Soy deportista y gracias a Hernán he mejorado muchísimo mi recuperación muscular.</div>
+      </div>
+
+      <!-- Review 5 -->
+      <div class="review-item">
+        <div class="review-item__header">
+          <div class="review-item__avatar" style="background:linear-gradient(135deg,#c87a6e,#a85050)">D</div>
+          <div>
+            <div class="review-item__name">Daniela L.</div>
+          </div>
+        </div>
+        <div class="review-item__stars">★★★★★</div>
+        <div class="review-item__quote-mark">"</div>
+        <div class="review-item__text">Llevo meses yendo y cada sesión es mejor que la anterior. El ambiente, la atención, la técnica — todo de primera categoría.</div>
+      </div>
+
+      <!-- Review 6 -->
+      <div class="review-item">
+        <div class="review-item__header">
+          <div class="review-item__avatar" style="background:linear-gradient(135deg,#8ac87a,#5aaa50)">M</div>
+          <div>
+            <div class="review-item__name">Martín G.</div>
+          </div>
+        </div>
+        <div class="review-item__stars">★★★★★</div>
+        <div class="review-item__quote-mark">"</div>
+        <div class="review-item__text">Hernán claramente sabe lo que hace. Me explicó cada paso del masaje y sentí resultados inmediatos. Totalmente recomendable.</div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:3rem">
+      <a href="https://maps.google.com" target="_blank" rel="noopener" class="btn">
+        Ver todas las reseñas en Google →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- 10. CIERRE / CTA FINAL                      -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="closing-section" id="contacto" data-nav="contacto">
+  <div class="section__inner" style="text-align:center;display:flex;flex-direction:column;align-items:center">
+    <div class="closing-logo">HM · Masaje Funcional</div>
+
+    <h2 class="closing-title">
+      Tu cuerpo<br>
+      <em style="font-style:italic;color:var(--c-accent)">merece</em><br>
+      lo mejor.
+    </h2>
+
+    <p class="closing-subtitle">
+      Una sesión es el primer paso. Miles de clientes ya lo comprobaron. Tu bienestar comienza con una decisión.
+    </p>
+
+    <div class="closing-cta">
+      <a href="https://www.instagram.com/hernan.masajistafuncional/" target="_blank" rel="noopener" class="btn btn--primary" style="font-size:1rem;padding:1.1rem 2.8rem">
+        Agendar en Instagram
+      </a>
+      <a href="#inicio" class="btn" style="font-size:1rem;padding:1.1rem 2.8rem">
+        Volver al inicio
+      </a>
+    </div>
+
+    <!-- Bottom signature -->
+    <div style="margin-top:6rem;padding-top:2rem;border-top:1px solid var(--c-border);width:100%;display:flex;justify-content:space-between;align-items:center;flex-wrap:gap">
+      <span style="font-size:0.75rem;color:var(--c-text-muted);letter-spacing:0.1em;text-transform:uppercase">© 2025 Hernán · Masajista Funcional</span>
+      <span style="font-size:0.75rem;color:var(--c-text-muted)">Santiago, Chile</span>
+      <div style="display:flex;gap:3px;color:var(--c-gold);font-size:0.9rem">★★★★★</div>
+    </div>
+  </div>
+
+  <!-- Decorative background element -->
+  <div style="position:absolute;bottom:0;left:0;right:0;height:50%;background:radial-gradient(ellipse 60% 40% at 50% 100%,rgba(200,169,110,0.04) 0%,transparent 70%);pointer-events:none"></div>
+</section>
+
+<!-- Scripts -->
+<script src="/shared/js/core.js"></script>
+<script src="/brands/hernan/js/main.js"></script>
+
+</body>
+</html>

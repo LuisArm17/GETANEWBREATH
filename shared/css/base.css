@@ -1,0 +1,535 @@
+/* ===== BASE.CSS — SHARED FOUNDATION ===== */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Space+Mono:wght@400;700&display=swap');
+
+/* ─── CSS Variables ─────────────────────── */
+:root {
+  /* Colors (overrideable per theme) */
+  --c-bg:          #0a0a0a;
+  --c-surface:     #111111;
+  --c-surface-2:   #181818;
+  --c-border:      rgba(255,255,255,0.08);
+  --c-border-hover:rgba(255,255,255,0.25);
+  --c-text:        #f0ece4;
+  --c-text-muted:  rgba(240,236,228,0.45);
+  --c-accent:      #c8a96e;
+  --c-accent-dim:  rgba(200,169,110,0.15);
+  --c-accent-2:    #7a9e8a;
+  --c-gold:        #d4af70;
+  --c-gold-light:  #f0d090;
+
+  /* Typography */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
+  --font-mono:    'Space Mono', monospace;
+
+  /* Spacing */
+  --space-xs:  0.5rem;
+  --space-sm:  1rem;
+  --space-md:  2rem;
+  --space-lg:  4rem;
+  --space-xl:  8rem;
+
+  /* Layout */
+  --max-w:    1280px;
+  --section-pad: clamp(4rem, 8vw, 8rem);
+
+  /* Transitions */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in:  cubic-bezier(0.7, 0, 0.84, 0);
+}
+
+/* ─── Reset ─────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: auto; /* GSAP handles smooth scroll */
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background: var(--c-bg);
+  color: var(--c-text);
+  font-family: var(--font-body);
+  font-weight: 300;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+img, video { display: block; max-width: 100%; }
+
+a { color: inherit; text-decoration: none; }
+
+/* ─── Progress Bar ───────────────────────── */
+#progress-bar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 2px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--c-accent), var(--c-gold-light));
+  z-index: 9999;
+  transform-origin: left;
+  transition: width 0.1s linear;
+}
+
+/* ─── Navigation ────────────────────────── */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 1.5rem var(--space-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(to bottom, rgba(10,10,10,0.9) 0%, transparent 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.nav__logo {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--c-accent);
+  letter-spacing: 0.05em;
+}
+
+.nav__links {
+  display: flex;
+  gap: var(--space-md);
+  list-style: none;
+}
+
+.nav__links a {
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-text-muted);
+  transition: color 0.3s;
+}
+
+.nav__links a:hover { color: var(--c-accent); }
+
+/* ─── Sections ───────────────────────────── */
+.section {
+  min-height: 100vh;
+  padding: var(--section-pad) var(--space-md);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.section__inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ─── Typography ─────────────────────────── */
+.display-text {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 7rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.headline {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.subheadline {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--c-text-muted);
+}
+
+.label {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--c-accent);
+  font-weight: 500;
+}
+
+.body-text {
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  color: var(--c-text-muted);
+  max-width: 60ch;
+  line-height: 1.8;
+}
+
+/* ─── KPI / Counter Cards ───────────────── */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5px;
+  background: var(--c-border);
+  border: 1.5px solid var(--c-border);
+}
+
+.kpi-card {
+  background: var(--c-surface);
+  padding: var(--space-md) var(--space-md);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.4s;
+}
+
+.kpi-card::before {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--c-accent), transparent);
+  transform: scaleX(0);
+  transition: transform 0.6s var(--ease-out);
+}
+
+.kpi-card:hover::before { transform: scaleX(1); }
+.kpi-card:hover { background: var(--c-surface-2); }
+
+.kpi-number {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 900;
+  color: var(--c-accent);
+  line-height: 1;
+  display: block;
+}
+
+.kpi-label {
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-text-muted);
+  margin-top: 0.5rem;
+  display: block;
+}
+
+/* ─── Phone Mockup ───────────────────────── */
+.phone {
+  position: relative;
+  width: 260px;
+  height: 530px;
+  background: #0d0d0d;
+  border-radius: 40px;
+  border: 2px solid rgba(255,255,255,0.15);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.05),
+    0 40px 80px rgba(0,0,0,0.6),
+    inset 0 0 0 1px rgba(255,255,255,0.03);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.phone__notch {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 28px;
+  background: #0d0d0d;
+  border-radius: 0 0 20px 20px;
+  z-index: 10;
+}
+
+.phone__notch::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  right: 22px;
+  width: 10px;
+  height: 10px;
+  background: #1a1a1a;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 2px #222;
+}
+
+.phone__screen {
+  position: absolute;
+  inset: 0;
+  border-radius: 38px;
+  overflow: hidden;
+  background: #000;
+}
+
+.phone__screen video,
+.phone__screen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ─── Laptop Mockup ──────────────────────── */
+.laptop {
+  position: relative;
+  width: 520px;
+  flex-shrink: 0;
+}
+
+.laptop__screen-wrap {
+  background: #111;
+  border-radius: 12px 12px 0 0;
+  border: 2px solid rgba(255,255,255,0.1);
+  border-bottom: none;
+  padding: 20px 20px 0;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.laptop__screen-wrap video,
+.laptop__screen-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.laptop__base {
+  height: 16px;
+  background: linear-gradient(to bottom, #1a1a1a, #111);
+  border-radius: 0 0 4px 4px;
+  border: 2px solid rgba(255,255,255,0.08);
+  border-top: none;
+}
+
+.laptop__foot {
+  height: 6px;
+  background: #0d0d0d;
+  border-radius: 0 0 20px 20px;
+  margin: 0 10%;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+/* ─── Cards ──────────────────────────────── */
+.card {
+  background: var(--c-surface);
+  border: 1.5px solid var(--c-border);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: transform 0.4s var(--ease-out), border-color 0.4s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--c-accent);
+}
+
+.card__media {
+  aspect-ratio: 9/16;
+  overflow: hidden;
+  background: #000;
+  position: relative;
+}
+
+.card__media video,
+.card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease-out);
+}
+
+.card:hover .card__media img,
+.card:hover .card__media video {
+  transform: scale(1.04);
+}
+
+.card__body {
+  padding: var(--space-sm) var(--space-md);
+}
+
+.card__tag {
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--c-accent);
+}
+
+.card__title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0.3rem 0 0.5rem;
+  line-height: 1.3;
+}
+
+.card__meta {
+  font-size: 0.8rem;
+  color: var(--c-text-muted);
+}
+
+/* ─── Buttons ────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.9rem 2rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 500;
+  border: 1.5px solid currentColor;
+  border-radius: 2px;
+  cursor: pointer;
+  background: transparent;
+  color: var(--c-text);
+  transition: all 0.3s var(--ease-out);
+  font-family: var(--font-body);
+}
+
+.btn--primary {
+  background: var(--c-accent);
+  border-color: var(--c-accent);
+  color: #0a0a0a;
+}
+
+.btn--primary:hover {
+  background: var(--c-gold-light);
+  border-color: var(--c-gold-light);
+}
+
+.btn:not(.btn--primary):hover {
+  background: var(--c-accent-dim);
+  border-color: var(--c-accent);
+  color: var(--c-accent);
+}
+
+/* ─── Divider ────────────────────────────── */
+.divider {
+  height: 1px;
+  background: var(--c-border);
+  margin: var(--space-lg) 0;
+}
+
+.divider--accent {
+  height: 2px;
+  background: linear-gradient(90deg, var(--c-accent) 0%, transparent 60%);
+}
+
+/* ─── Stars ──────────────────────────────── */
+.stars {
+  display: flex;
+  gap: 3px;
+  color: var(--c-gold);
+  font-size: 1.1rem;
+}
+
+/* ─── Review Cards ───────────────────────── */
+.review-card {
+  background: var(--c-surface);
+  border: 1.5px solid var(--c-border);
+  border-radius: 4px;
+  padding: 1.5rem;
+  position: relative;
+}
+
+.review-card::before {
+  content: '"';
+  font-family: var(--font-display);
+  font-size: 4rem;
+  color: var(--c-accent);
+  position: absolute;
+  top: -0.5rem;
+  left: 1rem;
+  line-height: 1;
+  opacity: 0.4;
+}
+
+/* ─── Tabs ───────────────────────────────── */
+.tabs-header {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--c-border);
+  margin-bottom: var(--space-md);
+}
+
+.tab-btn {
+  padding: 0.8rem 1.5rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: transparent;
+  border: none;
+  color: var(--c-text-muted);
+  cursor: pointer;
+  position: relative;
+  font-family: var(--font-body);
+  transition: color 0.3s;
+}
+
+.tab-btn::after {
+  content: '';
+  position: absolute;
+  bottom: -1px; left: 0; right: 0;
+  height: 2px;
+  background: var(--c-accent);
+  transform: scaleX(0);
+  transition: transform 0.4s var(--ease-out);
+}
+
+.tab-btn.active { color: var(--c-accent); }
+.tab-btn.active::after { transform: scaleX(1); }
+
+.tabs-panels {
+  display: grid;
+}
+
+.tab-panel {
+  grid-row: 1;
+  grid-column: 1;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s;
+}
+
+.tab-panel.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ─── Section Decorators ──────────────────── */
+.section-number {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--c-text-muted);
+  letter-spacing: 0.15em;
+  margin-bottom: var(--space-sm);
+}
+
+/* ─── Responsive ─────────────────────────── */
+@media (max-width: 768px) {
+  .nav__links { display: none; }
+  .phone { width: 200px; height: 410px; }
+  .laptop { width: 100%; }
+}
+
+/* ─── GSAP animation init states ─────────── */
+.gsap-fade-up { opacity: 0; transform: translateY(40px); }
+.gsap-fade-in { opacity: 0; }
+.gsap-scale-in { opacity: 0; transform: scale(0.95); }
+
+/* ─── Gradient overlays ───────────────────── */
+.gradient-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  pointer-events: none;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}

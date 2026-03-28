@@ -1,0 +1,114 @@
+{
+  "brand": "Hernán — Masaje Funcional",
+  "tagline": "Recupera tu cuerpo. Recupera tu vida.",
+  "instagram": "hernan.masajistafuncional",
+  "location": "Santiago, Chile",
+  "google": {
+    "rating": 5.0,
+    "reviews": 47,
+    "badge": "Calificación perfecta",
+    "reviews_sample": [
+      {
+        "name": "Valentina R.",
+        "rating": 5,
+        "text": "La mejor decisión fue agendar con Hernán. Llegué con una contractura enorme en el cuello y en una sesión sentí el cambio. Muy profesional y atento."
+      },
+      {
+        "name": "Rodrigo M.",
+        "rating": 5,
+        "text": "Excelente servicio. Hernán tiene un conocimiento real del cuerpo humano. Noto la diferencia en mi rendimiento deportivo desde que voy regularmente."
+      },
+      {
+        "name": "Camila F.",
+        "rating": 5,
+        "text": "Salí completamente renovada. No solo es masaje, es una experiencia de bienestar completa. Muy recomendado para quienes trabajamos bajo estrés."
+      },
+      {
+        "name": "Felipe A.",
+        "rating": 5,
+        "text": "Profesional, puntual y con unas manos increíbles. Soy deportista y gracias a Hernán he mejorado muchísimo mi recuperación muscular."
+      },
+      {
+        "name": "Daniela L.",
+        "rating": 5,
+        "text": "Llevo meses yendo y cada sesión es mejor que la anterior. El ambiente, la atención, la técnica — todo de primera categoría."
+      },
+      {
+        "name": "Martín G.",
+        "rating": 5,
+        "text": "Hernán claramente sabe lo que hace. Me explicó cada paso del masaje y sentí resultados inmediatos. Totalmente recomendable."
+      }
+    ]
+  },
+  "kpis": [
+    { "value": 47, "suffix": "+", "label": "Reseñas Google", "prefix": "" },
+    { "value": 5.0, "suffix": "★", "label": "Calificación promedio", "prefix": "", "decimals": 1 },
+    { "value": 100, "suffix": "%", "label": "Clientes satisfechos", "prefix": "" },
+    { "value": 8, "suffix": "+", "label": "Años de experiencia", "prefix": "" }
+  ],
+  "science_stats": [
+    { "value": 28, "suffix": "%", "label": "↑ Serotonina", "desc": "Hormona clave de bienestar y motivación" },
+    { "value": 31, "suffix": "%", "label": "↑ Dopamina", "desc": "Mejora rendimiento mental y foco" },
+    { "value": 35, "suffix": "%", "label": "↓ Cortisol", "desc": "Reducción del biomarcador de estrés" },
+    { "value": 90, "suffix": "%", "label": "Mejora del sueño", "desc": "Clientes reportan descanso superior" }
+  ],
+  "services": [
+    {
+      "name": "Masaje Deportivo",
+      "desc": "Técnicas especializadas para deportistas. Recuperación muscular, prevención de lesiones y mejora del rendimiento físico.",
+      "icon": "🏃",
+      "duration": "60 min"
+    },
+    {
+      "name": "Masaje Relajante",
+      "desc": "Libera tensión acumulada y activa el sistema nervioso parasimpático. Ideal para quienes viven bajo estrés crónico.",
+      "icon": "🌿",
+      "duration": "60–90 min"
+    },
+    {
+      "name": "Masaje Funcional",
+      "desc": "Abordaje integral que combina técnicas miofasciales, neuromusculares y de tejido profundo para tratar el origen del dolor.",
+      "icon": "⚡",
+      "duration": "75 min"
+    },
+    {
+      "name": "Masaje Descontracturante",
+      "desc": "Foco en nudos musculares y contracturas crónicas. Alta presión con control total del dolor para una liberación profunda.",
+      "icon": "💪",
+      "duration": "60 min"
+    }
+  ],
+  "benefits": [
+    { "icon": "🧠", "title": "Claridad mental", "desc": "↑ Rendimiento cognitivo y concentración sostenida" },
+    { "icon": "❤️", "title": "Salud cardiovascular", "desc": "↓ Presión arterial y frecuencia cardíaca" },
+    { "icon": "😴", "title": "Calidad del sueño", "desc": "↑ Activación del modo parasimpático de calma" },
+    { "icon": "💪", "title": "Rendimiento físico", "desc": "↓ Tensión muscular y tiempo de recuperación" },
+    { "icon": "😌", "title": "Bienestar emocional", "desc": "↑ Estado de ánimo y percepción de relajación" },
+    { "icon": "⚡", "title": "Energía vital", "desc": "↑ Vitalidad sostenida post-sesión" }
+  ],
+  "growth_chart": {
+    "labels": ["2020", "2021", "2022", "2023", "2024", "2025"],
+    "clients": [12, 28, 55, 89, 134, 200],
+    "reviews": [0, 5, 12, 24, 38, 47]
+  },
+  "videos": [
+    {
+      "title": "Técnica de tejido profundo",
+      "views": "12.4K",
+      "desc": "Liberación de fascia y musculatura profunda",
+      "placeholder": "video-1"
+    },
+    {
+      "title": "Masaje deportivo en acción",
+      "views": "9.8K",
+      "desc": "Recuperación post-entrenamiento intensivo",
+      "placeholder": "video-2"
+    },
+    {
+      "title": "El poder del masaje funcional",
+      "views": "18.2K",
+      "desc": "El video más visto — bienestar integral",
+      "placeholder": "video-3"
+    }
+  ]
+}
