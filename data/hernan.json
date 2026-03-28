@@ -2,41 +2,9 @@
   "brand": "Hernán — Masaje Funcional",
   "tagline": "Recupera tu cuerpo. Recupera tu vida.",
   "instagram": "hernan.masajistafuncional",
-  "location": "Santiago, Chile",
-  "google": {
-    "rating": 5.0,
-    "reviews": 47,
-    "badge": "Calificación perfecta",
-    "reviews_sample": [
-      {
-        "name": "Valentina R.",
-        "rating": 5,
-        "text": "La mejor decisión fue agendar con Hernán. Llegué con una contractura enorme en el cuello y en una sesión sentí el cambio. Muy profesional y atento."
-      },
-      {
-        "name": "Rodrigo M.",
-        "rating": 5,
-        "text": "Excelente servicio. Hernán tiene un conocimiento real del cuerpo humano. Noto la diferencia en mi rendimiento deportivo desde que voy regularmente."
-      },
-      {
-        "name": "Camila F.",
-        "rating": 5,
-        "text": "Salí completamente renovada. No solo es masaje, es una experiencia de bienestar completa. Muy recomendado para quienes trabajamos bajo estrés."
-      },
-      {
-        "name": "Felipe A.",
-        "rating": 5,
-        "text": "Profesional, puntual y con unas manos increíbles. Soy deportista y gracias a Hernán he mejorado muchísimo mi recuperación muscular."
-      },
-      {
-        "name": "Daniela L.",
-        "rating": 5,
-        "text": "Llevo meses yendo y cada sesión es mejor que la anterior. El ambiente, la atención, la técnica — todo de primera categoría."
-      },
-      {
-        "name": "Martín G.",
-        "rating": 5,
-        "text": "Hernán claramente sabe lo que hace. Me explicó cada paso del masaje y sentí resultados inmediatos. Totalmente recomendable."
+  "location": " Las Cabras Región de O'higgins "
+    "rating": 5.0 
+    "badge": "Calificación perfecta"
       }
     ]
   },
@@ -54,28 +22,28 @@
   ],
   "services": [
     {
-      "name": "Masaje Deportivo",
+      "name": "Masaje Deportivo / Deep Tessue Massage ",
       "desc": "Técnicas especializadas para deportistas. Recuperación muscular, prevención de lesiones y mejora del rendimiento físico.",
       "icon": "🏃",
-      "duration": "60 min"
+      "duration": "75 MIN"
     },
     {
-      "name": "Masaje Relajante",
-      "desc": "Libera tensión acumulada y activa el sistema nervioso parasimpático. Ideal para quienes viven bajo estrés crónico.",
+      "name": "Masaje FMT ",
+      "desc": "Libera tensión acumulada con técnicas de masaje flow y activa el sistema nervioso parasimpático. Ideal para quienes viven bajo estrés crónico.",
       "icon": "🌿",
-      "duration": "60–90 min"
+      "duration": "45 MIN"
     },
     {
       "name": "Masaje Funcional",
       "desc": "Abordaje integral que combina técnicas miofasciales, neuromusculares y de tejido profundo para tratar el origen del dolor.",
       "icon": "⚡",
-      "duration": "75 min"
+      "duration": "50-90 MIN" 
     },
     {
-      "name": "Masaje Descontracturante",
-      "desc": "Foco en nudos musculares y contracturas crónicas. Alta presión con control total del dolor para una liberación profunda.",
+      "name": " DRENAJE LINFÁTICO",
+      "desc": "El drenaje linfático a través de la masoterapia funcional es una técnica manual orientada a estimular el sistema linfático, favorecer la eliminación de líquidos retenidos, mejorar la circulación de retorno y apoyar la recuperación tisular.",
       "icon": "💪",
-      "duration": "60 min"
+      "duration": "90 min"
     }
   ],
   "benefits": [
@@ -87,26 +55,21 @@
     { "icon": "⚡", "title": "Energía vital", "desc": "↑ Vitalidad sostenida post-sesión" }
   ],
   "growth_chart": {
-    "labels": ["2020", "2021", "2022", "2023", "2024", "2025"],
-    "clients": [12, 28, 55, 89, 134, 200],
-    "reviews": [0, 5, 12, 24, 38, 47]
+    "labels": ["2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026"]
   },
   "videos": [
     {
-      "title": "Técnica de tejido profundo",
-      "views": "12.4K",
+      "title": "Técnica de tejido profundo"
       "desc": "Liberación de fascia y musculatura profunda",
       "placeholder": "video-1"
     },
     {
-      "title": "Masaje deportivo en acción",
-      "views": "9.8K",
+      "title": "Masaje deportivo en acción"
       "desc": "Recuperación post-entrenamiento intensivo",
       "placeholder": "video-2"
     },
     {
-      "title": "El poder del masaje funcional",
-      "views": "18.2K",
+      "title": "El poder del masaje funcional"
       "desc": "El video más visto — bienestar integral",
       "placeholder": "video-3"
     }
